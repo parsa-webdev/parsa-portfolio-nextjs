@@ -1,0 +1,16 @@
+export const variables = {
+  sectionMaxWidth: `1200px`,
+  mobileBreakPoint: `768px`,
+  mobileBreakPointSmall: `350px`,
+  tabletBreakPoint: `1024px`,
+  black: `#000`,
+  dark: `#101216`,
+  gray: `#3E4347`,
+  lightGray: `#505050`,
+  light: `#EFFFF7`,
+  lightGreen: `#E0FFEF`,
+  lightGreen2: `#C9ECDA`,
+  lightGreen3: `#CFFFE7`,
+  primary: `#32FF92`,
+  secondary: `#FFBC41`,
+};
