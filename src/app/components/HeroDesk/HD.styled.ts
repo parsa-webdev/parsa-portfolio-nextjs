@@ -54,10 +54,11 @@ export const HDRoot = styled.div`
       }
     }
     .cta {
-      padding: 15px 20px;
+      padding: 15px 28px;
     }
   }
   .hdRight {
+    margin-top: 50px;
     .parsa-img {
       width: 546.259px;
     }

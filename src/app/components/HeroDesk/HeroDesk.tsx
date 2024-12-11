@@ -44,7 +44,7 @@ export default function HeroDesk() {
           Trusted by Clients to Deliver Scalable, Modern, <br /> and Impactful
           Web Experiences.
         </h2>
-        <div className="p-5 bg-lightGreen rounded-xl mt-20 text-sm text-dark mb-10">
+        <div className="testimonial p-5 bg-lightGreen rounded-xl mt-20 text-sm text-dark mb-10">
           <div className="flex justify-between">
             <div>
               <FiveStarIcon />
@@ -108,13 +108,13 @@ export default function HeroDesk() {
           >
             Schedule A Meeting
           </a>
-          <a className="cta text-center text-primary border font-medium border-primary rounded-xl hover:text-secondary hover:border-secondary  ease-in-out duration-300 ">
+          <a className="cta text-center text-primary border-2 font-medium border-primary rounded-xl hover:text-secondary hover:border-secondary  ease-in-out duration-300 ">
             Browse Portfolio
           </a>
           <a
             href="https://www.youtube.com/watch?v=mAjJziK9Wxg"
             target="_blank"
-            className="cta cta-tertiary flex items-center gap-2 text-center text-center text-lightGreen3 border border-lightGreen3 rounded-xl hover:text-secondary hover:border-secondary  ease-in-out duration-300 "
+            className="cta cta-tertiary flex items-center gap-2 text-center text-center text-lightGreen3 border-2 border-lightGreen3 rounded-xl hover:text-secondary hover:border-secondary  ease-in-out duration-300 "
           >
             <p>Watch My Video</p> <YouTubeIcon />
           </a>

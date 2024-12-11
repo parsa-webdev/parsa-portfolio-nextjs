@@ -1,5 +1,5 @@
 export const variables = {
-  sectionMaxWidth: `1200px`,
+  sectionMaxWidth: `1290px`,
   mobileBreakPoint: `768px`,
   mobileBreakPointSmall: `350px`,
   tabletBreakPoint: `1024px`,
