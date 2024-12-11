@@ -48,6 +48,11 @@ export const HDRoot = styled.div`
     .brian-info {
       margin-top: -7px;
       margin-bottom: 15px;
+      .flag {
+        img {
+          width: 15px;
+        }
+      }
       .brian-img {
         margin-top: -40px;
         width: 100px;

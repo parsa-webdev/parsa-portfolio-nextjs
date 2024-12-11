@@ -53,7 +53,7 @@ export default function HeroDesk() {
               <div className="">
                 <h5 className="text-right font-medium">Brian Park</h5>
                 <p className="text-xs text-right">CEO, Apeak Corporation</p>
-                <div className="flex gap-1 items-center justify-end pt-1">
+                <div className="flag flex gap-1 items-center justify-end pt-1">
                   <USFlag />
                   <p className="text-xs text-right">Seatle, Washington</p>
                 </div>
