@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import StyledComponentsRegistry from "./lib/registry";
 import { Poppins } from "next/font/google";
-import Head from "next/head";
 const poppins = Poppins({
   weight: ["400", "700"], // Specify the font weights you need
   subsets: ["latin"], // Include 'latin' for standard English characters
@@ -11,6 +10,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Parsa Morshed",
   description: "Highly Rated Frontend Developer",
+  themeColor: "#000000",
 };
 
 export default function RootLayout({
@@ -20,17 +20,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        {/* Set theme color for Android */}
-        <meta name="theme-color" content="#000000" />
-
-        {/* Set theme color for iOS Safari */}
+      <head>
+        {/* Custom meta tags */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta
           name="apple-mobile-web-app-status-bar-style"
           content="black-translucent"
         />
-      </Head>
+      </head>
       <body className={`${poppins.className}`}>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
