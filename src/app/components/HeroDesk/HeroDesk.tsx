@@ -100,7 +100,7 @@ export default function HeroDesk() {
             {ExternalLinkIconSM()}
           </a>
         </div>
-        <div className="flex justify-between mb-40">
+        <div className="flex justify-between mb-20">
           <a
             href="https://calendly.com/parsawebdev/30min"
             target="_blank"
