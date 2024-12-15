@@ -67,7 +67,7 @@ export default function HeroDesk() {
               </div>
             </div>
           </div>
-          <h3>
+          <h3 className="text-base">
             Parsa has been with Apeak for the past four years, and honestly,{" "}
             {""}
             {"she’s"} been such an incredible part of the team. {"She’s"} taken

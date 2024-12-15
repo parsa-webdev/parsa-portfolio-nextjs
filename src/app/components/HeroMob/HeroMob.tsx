@@ -10,6 +10,7 @@ import USFlag from "@/app/icons/USFlag";
 import brian from "../HeroDesk/Images/brian.png";
 import { FiveStarIconSM } from "@/app/icons/FiveStarIcon";
 import YouTubeIcon from "@/app/icons/YouTubeIcon";
+import PortfolioMob from "../PortfolioMob/PortfolioMob";
 export default function HeroMob() {
   return (
     <HMRoot>
@@ -148,6 +149,7 @@ export default function HeroMob() {
               <p>Watch My Video</p> <YouTubeIcon />
             </a>
           </div>
+          <PortfolioMob />
         </div>
       </div>
     </HMRoot>

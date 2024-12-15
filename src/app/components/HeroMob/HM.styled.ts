@@ -5,6 +5,7 @@ export const HMRoot = styled.div`
   display: none;
   .parsa-mob {
     position: relative;
+    margin-bottom: 420px;
     img {
       width: 100%;
     }

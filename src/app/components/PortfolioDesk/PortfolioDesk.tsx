@@ -76,7 +76,9 @@ export default function PortfolioDesk() {
         </div>
         <div className="project-right">
           <div>
-            <h3 className="text-3xl text-gray font-bold mb-6">Apeak Series</h3>
+            <h3 className="text-3xl text-gray font-bold mb-6 mt-5">
+              Apeak Series
+            </h3>
             <p className="text-gray2">
               The Apeak Series is a suite of platforms designed to enhance
               mental performance in sports, empowering athletes, coaches, and
@@ -123,6 +125,9 @@ export default function PortfolioDesk() {
             </div>{" "}
             <div className="bg-lightGreen2 rounded-full inline-block text-dark py-2 px-5 font-bold mr-2 mt-4">
               Tailwind CSS
+            </div>
+            <div className="bg-lightGreen2 rounded-full inline-block text-dark py-2 px-5 font-bold mr-2 mt-4">
+              Styled Components
             </div>
             <div className="bg-lightGreen2 rounded-full inline-block text-dark py-2 px-5 font-bold mr-2 mt-4">
               React
