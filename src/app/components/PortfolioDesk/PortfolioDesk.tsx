@@ -48,7 +48,9 @@ export default function PortfolioDesk() {
                     return (
                       <div
                         key={index}
-                        className="bg-lightGreen rounded-xl border-2 border-dark p-4 text-dark mb-5"
+                        className={`bg-lightGreen rounded-xl border-2 border-dark p-4 text-dark ${
+                          index !== 0 && "mt-5"
+                        }`}
                       >
                         <p>{i.text}</p>
                         <div className="flex justify-between items-center mt-4">

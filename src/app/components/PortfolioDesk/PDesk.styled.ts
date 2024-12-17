@@ -26,6 +26,7 @@ export const PRoot = styled.div`
     }
     .project-right {
       width: 591.875px;
+      gap: 30px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;

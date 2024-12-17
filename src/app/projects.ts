@@ -78,7 +78,7 @@ export const portfolioProjects = [
     description:
       "The Superior Coach App is a dedicated platform designed to empower sports coaches with tools to manage and enhance player performance. Built using Next.js, the app focuses on seamless communication, detailed progress tracking, and player engagement.",
     contribution: [
-      "<b>Prototyping & Design:</b> Collaborated on the app’s design process, creating wireframes and prototypes to ensure a seamless user flow. Used Figma to build consistent UI components, maintaining a modern, engaging design language throughout.",
+      "Prototyping & Design: Collaborated on the app’s design process, creating wireframes and prototypes to ensure a seamless user flow. Used Figma to build consistent UI components, maintaining a modern, engaging design language throughout.",
       "Player Management: Developed secure login/signup workflows with JWT authentication and features for inviting players, including status tracking, and the ability to resend or delete invitations.",
       "Real-Time Communication: Integrated chat functionality with instant notifications for new messages, enhancing communication between coaches and players.",
       "Progress Tracking: Implemented dynamic charts to track players' goals and performance over time, providing coaches with data-driven insights for better decision-making.",
@@ -103,7 +103,7 @@ export const portfolioProjects = [
   },
   {
     id: 3,
-    title: "Apeak Resources",
+    title: "The Apeak Blog",
     description:
       "Apeak Resources is a centralized platform offering tailored mental training materials to help athletes improve their performance and resilience. Designed and developed using Next.js, it combines usability with functionality to deliver an engaging experience for users seeking to expand their mental training knowledge.",
     contribution: [
@@ -112,7 +112,13 @@ export const portfolioProjects = [
       "Performance Optimization: Applied optimization techniques to ensure fast load times and smooth interactions, even with large volumes of resources.",
       "Accessibility Standards: Ensured compliance with web accessibility standards, making the platform inclusive for all users.",
     ],
-    technologies: ["Figma", "Material UI", "React", "Backend API", "Live Chat"],
+    technologies: [
+      "Figma",
+      "Styled Components",
+      "Backend API",
+      "React",
+      "Next.js",
+    ],
 
     url: [
       {

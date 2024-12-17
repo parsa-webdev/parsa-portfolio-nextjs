@@ -18,9 +18,38 @@ export default function HeroMob() {
         <Image src={meMob} alt="Parsa Morshed - Frontend Developer" />
         <div className="hero-mob px-5">
           <div className="flex bg-red pt-5 items-center justify-between header mb-5">
-            <div>
-              <h6 className="text-base text-lightGreen">Parsa Morshed</h6>
+            <div className="flex items-center gap-3">
+              <svg
+                width="15"
+                height="14"
+                viewBox="0 0 15 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 1L14 0.999999"
+                  stroke="#DAFFEC"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M1 7.00001L14 7"
+                  stroke="#DAFFEC"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M1 13L14 13"
+                  stroke="#DAFFEC"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+              <div>
+                <h6 className="text-base text-lightGreen">Parsa Morshed</h6>
+              </div>
             </div>
+
             <div className="flex gap-x-7 items-center">
               <a href="mailto:parsawebdev@mail.com" target="_blank">
                 <MailIcon />
@@ -38,34 +67,6 @@ export default function HeroMob() {
               >
                 <DocumentIcon />
               </a>
-            </div>
-            <div>
-              <svg
-                width="15"
-                height="14"
-                viewBox="0 0 15 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 1L14 0.999999"
-                  stroke="#DAFFEC"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M4 7L14 7"
-                  stroke="#DAFFEC"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M8 13L14 13"
-                  stroke="#DAFFEC"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
             </div>
           </div>
 
