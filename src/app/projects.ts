@@ -1,5 +1,7 @@
 import type { StaticImageData } from "next/image";
 import apeakImg from "../../src/app/components/PortfolioDesk/Images/apeak.png";
+import coachImg from "../../src/app/components/PortfolioDesk/Images/coachD.png";
+import resourceImg from "../../src/app/components/PortfolioDesk/Images/resourceD.png";
 
 export type ProjectUrl = {
   appName: string;
@@ -11,7 +13,10 @@ export type Testimonial = {
   userDetail: string;
   text: string;
 };
-
+export type Skills = {
+  frontend: string[];
+  design: string[];
+};
 export type IPortfolioProject = {
   id: number;
   title: string;
@@ -92,7 +97,7 @@ export const portfolioProjects = [
         appUrl: "https://coach.apeak.com/",
       },
     ],
-    images: [apeakImg],
+    images: [coachImg],
     testimonials: [
       {
         userName: "Coach Michael R.",
@@ -126,7 +131,7 @@ export const portfolioProjects = [
         appUrl: "https://apeak.com/resources",
       },
     ],
-    images: [apeakImg],
+    images: [resourceImg],
     testimonials: [
       {
         userName: "Jordan L.",
@@ -136,3 +141,22 @@ export const portfolioProjects = [
     ],
   },
 ];
+
+export const skills = {
+  frontend: [
+    "HTML",
+    "CSS",
+    "Javascript",
+    "React",
+    "Redux",
+    "Next.js",
+    "API Integration",
+  ],
+  design: [
+    "Figma",
+    "Photoshop",
+    "Styled Components",
+    "Tailwind CSS",
+    "Material UI",
+  ],
+};

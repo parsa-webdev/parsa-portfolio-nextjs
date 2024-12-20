@@ -12,6 +12,7 @@ export const variables = {
   lightGreen: `#E0FFEF`,
   lightGreen2: `#C9ECDA`,
   lightGreen3: `#CFFFE7`,
+  lightGreen4: `#D0F9E4`,
   primary: `#32FF92`,
   secondary: `#FFBC41`,
 };

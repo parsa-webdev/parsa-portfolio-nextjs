@@ -72,3 +72,15 @@ export const HDRoot = styled.div`
     display: none;
   }
 `;
+export const DesktopOnly = styled.div`
+  @media (max-width: ${variables.mobileBreakPoint}) {
+    display: none;
+  }
+`;
+
+export const MobileOnly = styled.div`
+  display: none;
+  @media (max-width: ${variables.mobileBreakPoint}) {
+    display: block;
+  }
+`;

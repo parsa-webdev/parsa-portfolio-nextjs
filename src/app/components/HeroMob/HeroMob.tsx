@@ -11,6 +11,7 @@ import brian from "../HeroDesk/Images/brian.png";
 import { FiveStarIconSM } from "@/app/icons/FiveStarIcon";
 import YouTubeIcon from "@/app/icons/YouTubeIcon";
 import PortfolioMob from "../PortfolioMob/PortfolioMob";
+import ContactMob from "../ContactMob/ContactMob";
 export default function HeroMob() {
   return (
     <HMRoot>
@@ -151,6 +152,7 @@ export default function HeroMob() {
             </a>
           </div>
           <PortfolioMob />
+          <ContactMob />
         </div>
       </div>
     </HMRoot>
