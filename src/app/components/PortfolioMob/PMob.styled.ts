@@ -17,15 +17,16 @@ export const PMRoot = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      .project-img {
+        width: 100%;
+        height: auto;
+      }
     }
     .project-bottom {
       width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      img {
-        width: 100%;
-      }
     }
   }
   ul {

@@ -1,6 +1,6 @@
 "use client";
 import { PMRoot } from "./PMob.styled";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { FiveStarIconSM } from "@/app/icons/FiveStarIcon";
 import ExternalLinkIcon from "@/app/icons/ExternalLinkIcon";
 import toggleImg from "./Images/switch.png";
@@ -40,9 +40,14 @@ export default function PortfolioMob() {
             <div className="project bg-light p-4 flex flex-col">
               <div className="project-top">
                 <div className="project-img mb-4">
-                  {project.images.map((i: string | StaticImageData, index) => {
-                    return <Image key={index} src={i} alt="Apeak Series" />;
-                  })}
+                  <Image
+                    key={index}
+                    src={project.image}
+                    alt="Parsa Morshed"
+                    width={300}
+                    height={100}
+                    priority={index === 0}
+                  />
                 </div>
                 <div className="p-3">
                   <div className="flex items-center mb-3 gap-2">

@@ -7,7 +7,6 @@ import LinkedinIcon from "@/app/icons/LinkedinIcon";
 import DocumentIcon from "@/app/icons/DocumentIcon";
 import { ExternalLinkIconSM } from "@/app/icons/ExternalLinkIcon";
 import USFlag from "@/app/icons/USFlag";
-import brian from "../HeroDesk/Images/brian.png";
 import { FiveStarIconSM } from "@/app/icons/FiveStarIcon";
 import YouTubeIcon from "@/app/icons/YouTubeIcon";
 import PortfolioMob from "../PortfolioMob/PortfolioMob";
@@ -16,36 +15,14 @@ export default function HeroMob() {
   return (
     <HMRoot>
       <div className="parsa-mob">
-        <Image src={meMob} alt="Parsa Morshed - Frontend Developer" />
+        <Image
+          src={meMob}
+          alt="Parsa Morshed - Frontend Developer"
+          priority={true}
+        />
         <div className="hero-mob px-5">
           <div className="flex bg-red pt-5 items-center justify-between header mb-5">
             <div className="flex items-center gap-3">
-              <svg
-                width="15"
-                height="14"
-                viewBox="0 0 15 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 1L14 0.999999"
-                  stroke="#DAFFEC"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M1 7.00001L14 7"
-                  stroke="#DAFFEC"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M1 13L14 13"
-                  stroke="#DAFFEC"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
               <div>
                 <h6 className="text-base text-lightGreen">Parsa Morshed</h6>
               </div>
@@ -93,8 +70,10 @@ export default function HeroMob() {
                 <div>
                   <Image
                     className="brian-img"
-                    src={brian}
+                    src="/brian.png"
                     alt="Parsa Morshed - Frontend Developer"
+                    width={100}
+                    height={0}
                   />
                 </div>
               </div>

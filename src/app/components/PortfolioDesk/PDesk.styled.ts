@@ -7,9 +7,6 @@ export const PRoot = styled.div`
 
   .computer {
     margin-top: -80px;
-    img {
-      width: 161.93px;
-    }
   }
 
   .project {
@@ -20,8 +17,13 @@ export const PRoot = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      img {
+      .project-img {
         width: 100%;
+        height: auto;
+        img {
+          width: 100%;
+          height: auto;
+        }
       }
     }
     .project-right {
@@ -30,6 +32,12 @@ export const PRoot = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      .line {
+        width: 100%;
+        height: 1.5px;
+        background-color: ${variables.lightGreen2};
+        border-radius: 30px;
+      }
     }
   }
   ul {

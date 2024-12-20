@@ -1,8 +1,3 @@
-import type { StaticImageData } from "next/image";
-import apeakImg from "../../src/app/components/PortfolioDesk/Images/apeak.png";
-import coachImg from "../../src/app/components/PortfolioDesk/Images/coachD.png";
-import resourceImg from "../../src/app/components/PortfolioDesk/Images/resourceD.png";
-
 export type ProjectUrl = {
   appName: string;
   appUrl: string;
@@ -24,7 +19,7 @@ export type IPortfolioProject = {
   contribution: string[];
   technologies: string[];
   url: ProjectUrl[];
-  images: (string | StaticImageData)[]; // Allow strings or imported images
+  image: string;
   testimonials: Testimonial[];
 };
 
@@ -63,7 +58,7 @@ export const portfolioProjects = [
         appUrl: "https://superiorperformance.app/",
       },
     ],
-    images: [apeakImg],
+    image: "/apeak.png",
     testimonials: [
       {
         userName: "Claudia M.",
@@ -97,7 +92,7 @@ export const portfolioProjects = [
         appUrl: "https://coach.apeak.com/",
       },
     ],
-    images: [coachImg],
+    image: "/coachD.png",
     testimonials: [
       {
         userName: "Coach Michael R.",
@@ -119,10 +114,10 @@ export const portfolioProjects = [
     ],
     technologies: [
       "Figma",
-      "Styled Components",
-      "Backend API",
       "React",
       "Next.js",
+      "Backend API",
+      "Styled Components",
     ],
 
     url: [
@@ -131,7 +126,7 @@ export const portfolioProjects = [
         appUrl: "https://apeak.com/resources",
       },
     ],
-    images: [resourceImg],
+    image: "/resourceD.png",
     testimonials: [
       {
         userName: "Jordan L.",

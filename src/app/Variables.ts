@@ -4,7 +4,7 @@ export const variables = {
   mobileBreakPointSmall: `350px`,
   tabletBreakPoint: `1024px`,
   black: `#000`,
-  dark: `#101216`,
+  dark: `#101215`,
   gray: `#3E4347`,
   gray2: `#424242`,
   lightGray: `#505050`,

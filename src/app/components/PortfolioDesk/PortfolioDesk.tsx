@@ -1,9 +1,8 @@
 "use client";
 import { PRoot } from "./PDesk.styled";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { FiveStarIconSM } from "@/app/icons/FiveStarIcon";
 import ExternalLinkIcon from "@/app/icons/ExternalLinkIcon";
-import computer from "./Images/computer.png";
 import {
   IPortfolioProject,
   ProjectUrl,
@@ -21,10 +20,10 @@ export default function PortfolioDesk() {
           </h2>
         </div>
         <div className="computer">
-          <Image src={computer} alt="" />
+          <Image src="/computer.png" alt="" width={160} height={0} />
         </div>
       </div>
-      {portfolioProjects.map((i: IPortfolioProject, index) => {
+      {portfolioProjects.map((project: IPortfolioProject, index) => {
         return (
           <div key={index}>
             {index !== 0 && (
@@ -35,16 +34,22 @@ export default function PortfolioDesk() {
             <div className="project bg-light p-8 w-full flex justify-between">
               <div className="project-left">
                 <div className="project-img">
-                  {i.images.map((i: string | StaticImageData, index) => {
-                    return <Image key={index} src={i} alt="Parsa Morshed" />;
-                  })}
+                  <Image
+                    key={index}
+                    src={project.image}
+                    alt="Parsa Morshed"
+                    layout="responsive"
+                    width={572}
+                    height={0}
+                    priority={index === 0}
+                  />
                 </div>
                 <div className="impact">
                   <h4 className="text-2xl text-gray font-bold mt-6 mb-6">
                     Impact in Action
                   </h4>
 
-                  {i.testimonials.map((i: Testimonial, index) => {
+                  {project.testimonials.map((i: Testimonial, index) => {
                     return (
                       <div
                         key={index}
@@ -72,18 +77,18 @@ export default function PortfolioDesk() {
               <div className="project-right">
                 <div>
                   <h3 className="text-3xl text-gray font-bold mb-6 mt-5">
-                    {i.title}
+                    {project.title}
                   </h3>
-                  <p className="text-gray2">{i.description}</p>
+                  <p className="text-gray2">{project.description}</p>
                 </div>
-
+                <div className="line"></div>
                 <div>
                   {" "}
                   <h4 className="text-2xl text-gray font-bold mb-5">
                     The Tech Stack and Approach
                   </h4>
                   <ul className="list-disc">
-                    {i.contribution.map((i: string, index) => {
+                    {project.contribution.map((i: string, index) => {
                       return (
                         <li key={index} className="text-gray mt-1">
                           {i}
@@ -92,20 +97,20 @@ export default function PortfolioDesk() {
                     })}
                   </ul>
                 </div>
-
+                <div className="line"></div>
                 <div>
-                  {i.technologies.map((i: string, index) => {
+                  {project.technologies.map((i: string, index) => {
                     return (
                       <div
                         key={index}
-                        className="bg-lightGreen2 rounded-full inline-block text-dark py-2 px-5 font-bold mr-2 mt-4"
+                        className="bg-lightGreen2 rounded-full inline-block text-dark py-2 px-5 font-bold mr-2 mt-4 mb-4"
                       >
                         {i}
                       </div>
                     );
                   })}
                 </div>
-
+                <div className="line"></div>
                 <div>
                   <div className="flex items-center gap-2 mt-4">
                     <h4 className="text-2xl text-gray font-bold ">
@@ -113,7 +118,7 @@ export default function PortfolioDesk() {
                     </h4>
                     <ExternalLinkIcon />
                   </div>
-                  {i.url.map((i: ProjectUrl, index) => {
+                  {project.url.map((i: ProjectUrl, index) => {
                     return (
                       <a
                         key={index}

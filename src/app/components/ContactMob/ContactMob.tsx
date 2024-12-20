@@ -17,7 +17,7 @@ export default function ContactMob() {
           </h2>
         </div>
       </div>
-      <div className="contact bg-lightGreen p-4 mt-10">
+      <div className="contact bg-lightGreen p-6 mt-10">
         <div className="flex justify-between items-center">
           {TwoCirclesSM()} {TwoCirclesSM()}
         </div>

@@ -3,8 +3,6 @@ import MailIcon from "@/app/icons/MailIcon";
 import { HDRoot } from "./HD.styled";
 import LinkedinIcon from "@/app/icons/LinkedinIcon";
 import DocumentIcon from "@/app/icons/DocumentIcon";
-import meDesk from "./Images/meDesk.jpg";
-import brian from "./Images/brian.png";
 import Image from "next/image";
 import FiveStarIcon from "@/app/icons/FiveStarIcon";
 import USFlag from "@/app/icons/USFlag";
@@ -61,8 +59,10 @@ export default function HeroDesk() {
               <div>
                 <Image
                   className="brian-img"
-                  src={brian}
+                  src="/brian.png"
                   alt="Parsa Morshed - Frontend Developer"
+                  width={100}
+                  height={0}
                 />
               </div>
             </div>
@@ -123,8 +123,11 @@ export default function HeroDesk() {
       <div className="hdRight">
         <Image
           className="parsa-img"
-          src={meDesk}
+          src="/meDesk.jpg"
           alt="Parsa Morshed - Frontend Developer"
+          width={546.259}
+          height={0}
+          priority={true}
         />
       </div>
     </HDRoot>
