@@ -98,7 +98,7 @@ export default function ContactDesk() {
           <TwoCircles /> <TwoCircles />
         </div>
       </div>
-      <div className="text-gray text-base text-center w-full my-20">
+      <div className="text-gray text-base text-center w-full py-20">
         Ⓒ PARSA MORSHED, 2024-2025. All rights reserved.
       </div>
     </CRoot>

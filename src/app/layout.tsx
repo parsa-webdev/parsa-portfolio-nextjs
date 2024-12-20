@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
-import "./globals.css";
 import StyledComponentsRegistry from "./lib/registry";
 import { Poppins } from "next/font/google";
-import Head from "next/head";
+import type { Metadata } from "next";
+import "./globals.css";
+
 const poppins = Poppins({
   weight: ["400", "700"], // Specify the font weights you need
   subsets: ["latin"], // Include 'latin' for standard English characters
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         {/* Set theme color for Android */}
         <meta name="theme-color" content="#000000" />
 
@@ -30,7 +30,7 @@ export default function RootLayout({
           name="apple-mobile-web-app-status-bar-style"
           content="black-translucent"
         />
-      </Head>
+      </head>
       <body className={`${poppins.className}`}>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
