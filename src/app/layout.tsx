@@ -31,7 +31,7 @@ const glow = keyframes`
   }
 `;
 
-const LoaderContainer = styled.div<{ fadingout: boolean }>`
+const LoaderContainer = styled.div<{ $fadingout: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
@@ -43,8 +43,8 @@ const LoaderContainer = styled.div<{ fadingout: boolean }>`
   background-color: ${variables.dark};
   z-index: 9999;
   opacity: 1;
-  animation: ${({ fadingout }) =>
-    fadingout &&
+  animation: ${({ $fadingout }) =>
+    $fadingout &&
     css`
       ${fadeOut} 0.5s forwards;
     `};
@@ -60,7 +60,7 @@ const GlowingLoader = styled.div`
   font-size: 3rem;
   font-weight: bold;
   text-transform: uppercase;
-  animation: ${glow} 3s infinite ease-in-out;
+  animation: ${glow} 1.5s infinite ease-in-out;
 `;
 
 export default function RootLayout({
@@ -76,33 +76,45 @@ export default function RootLayout({
       setIsFadingOut(true);
       setTimeout(() => {
         setIsLoading(false);
-      }, 500);
+      }, 500); // Wait until the fade-out animation completes before setting isLoading to false
     };
 
-    const images = document.querySelectorAll("img");
-    const totalImages = images.length;
-    let loadedImages = 0;
+    const handleImageLoad = () => {
+      const images = document.querySelectorAll("img");
+      const totalImages = images.length;
+      let loadedImages = 0;
 
-    if (totalImages === 0) {
-      handleLoad();
-    } else {
-      images.forEach((img) => {
-        if (img.complete) {
-          loadedImages += 1;
-          if (loadedImages === totalImages) handleLoad();
-        } else {
-          img.addEventListener("load", () => {
+      if (totalImages === 0) {
+        handleLoad();
+      } else {
+        images.forEach((img) => {
+          if (img.complete) {
             loadedImages += 1;
             if (loadedImages === totalImages) handleLoad();
-          });
+          } else {
+            img.addEventListener("load", () => {
+              loadedImages += 1;
+              if (loadedImages === totalImages) handleLoad();
+            });
 
-          img.addEventListener("error", () => {
-            loadedImages += 1;
-            if (loadedImages === totalImages) handleLoad();
-          });
-        }
-      });
-    }
+            img.addEventListener("error", () => {
+              loadedImages += 1;
+              if (loadedImages === totalImages) handleLoad();
+            });
+          }
+        });
+      }
+    };
+
+    // Wait until window and resources are fully loaded
+    window.onload = handleImageLoad;
+
+    // Fallback in case of rapid state changes
+    const timer = setTimeout(() => {
+      handleLoad(); // Ensure that it doesn't stay stuck in loading state
+    }, 2000); // Time out after 5 seconds if images are not loading
+
+    return () => clearTimeout(timer); // Cleanup the timer on unmount
   }, []);
 
   return (
@@ -111,8 +123,7 @@ export default function RootLayout({
       <body className={`${poppins.className}`}>
         {isLoading ? (
           <StyledComponentsRegistry>
-            {/* @ts-expect-error type-error */}
-            <LoaderContainer fadingout={fadingOut ? "true" : "false"}>
+            <LoaderContainer $fadingout={fadingOut}>
               <GlowingLoader>PM</GlowingLoader>
             </LoaderContainer>
           </StyledComponentsRegistry>
