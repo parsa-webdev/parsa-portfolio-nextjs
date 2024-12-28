@@ -63,6 +63,7 @@ export default function HeroDesk() {
                   alt="Parsa Morshed - Frontend Developer"
                   width={100}
                   height={0}
+                  priority={true}
                 />
               </div>
             </div>

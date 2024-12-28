@@ -41,7 +41,7 @@ export default function PortfolioDesk() {
                     layout="responsive"
                     width={572}
                     height={0}
-                    priority={index === 0}
+                    priority={true}
                   />
                 </div>
                 <div className="impact">

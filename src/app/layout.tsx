@@ -119,7 +119,14 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <head></head>
+      <head>
+        <link rel="preload" href="/brian.png" as="image" />
+        <link rel="preload" href="/meDesk.jpg" as="image" />
+        <link rel="preload" href="/meDesk.jpg" as="image" />
+        <link rel="preload" href="/apeak.png" as="image" />
+        <link rel="preload" href="/coachD.png" as="image" />
+        <link rel="preload" href="/resourceD.png" as="image" />
+      </head>
       <body className={`${poppins.className}`}>
         {isLoading ? (
           <StyledComponentsRegistry>

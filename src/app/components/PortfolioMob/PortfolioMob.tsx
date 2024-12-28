@@ -46,7 +46,7 @@ export default function PortfolioMob() {
                     alt="Parsa Morshed"
                     width={300}
                     height={100}
-                    priority={index === 0}
+                    priority={true}
                   />
                 </div>
                 <div className="p-3">
