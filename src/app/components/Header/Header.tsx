@@ -1,0 +1,40 @@
+"use client";
+
+import MailIcon from "@/app/icons/MailIcon";
+import { HeaderDesk } from "./Header.styled";
+import LinkedinIcon from "@/app/icons/LinkedinIcon";
+import DocumentIcon from "@/app/icons/DocumentIcon";
+import MobileHeader from "./ MobileHeader/MobileHeader";
+
+export default function Header() {
+  return (
+    <>
+      <HeaderDesk>
+        <div className="flex gap-x-8 pt-10 items-center mb-12 justify-between">
+          <div>
+            <h6 className="text-base text-lightGreen">Parsa Morshed</h6>
+          </div>
+          <div className="flex gap-x-4 items-center">
+            <a href="mailto:parsawebdev@mail.com" target="_blank">
+              <MailIcon />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/parsa-morshed-5408941a5/"
+              target="_blank"
+            >
+              <LinkedinIcon />
+            </a>
+
+            <a
+              href="https://drive.google.com/file/d/166bv5gz_osvHkmq85eblOPQXc-cZkqdA/view?usp=drive_link"
+              target="_blank"
+            >
+              <DocumentIcon />
+            </a>
+          </div>
+        </div>
+      </HeaderDesk>
+      <MobileHeader />
+    </>
+  );
+}
