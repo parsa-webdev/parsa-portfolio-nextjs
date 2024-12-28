@@ -1,112 +1,124 @@
+"use client";
 import StyledComponentsRegistry from "./lib/registry";
 import { Poppins } from "next/font/google";
-import type { Metadata } from "next";
 import "./globals.css";
+import { useEffect, useState } from "react";
+import { variables } from "./Variables";
+import styled, { keyframes, css } from "styled-components";
 
 const poppins = Poppins({
-  weight: ["400", "700"], // Specify the font weights you need
-  subsets: ["latin"], // Include 'latin' for standard English characters
+  weight: ["400", "700"],
+  subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Parsa Morshed",
-  description:
-    "Highly Rated Frontend Engineer: Trusted by Clients to Deliver Scalable, Modern, and Impactful Web Experiences.",
-  openGraph: {
-    title: "Parsa Morshed | Frontend Developer",
-    description:
-      "Highly Rated Frontend Engineer: Trusted by Clients to Deliver Scalable, Modern, and Impactful Web Experiences.",
-    url: "", // Update with your site's URL
-    images: [
-      {
-        url: "/preview.jpg", // Add a relevant image URL
-        width: 1200,
-        height: 630,
-        alt: "Parsa Morshed",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "", // Add your Twitter handle here
-    title: "Parsa Morshed | Frontend Developer",
-    description:
-      "Highly Rated Frontend Engineer: Trusted by Clients to Deliver Scalable, Modern, and Impactful Web Experiences.",
-    //@ts-expect-error type-error
-    image: "/preview.jpg", // Add your image URL
-  },
-};
+const fadeOut = keyframes`
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+`;
+
+const glow = keyframes`
+  0%, 100% {
+    text-shadow: 0 0 2px #32FF92, 0 0 4px #32FF92, 0 0 6px #32FF92;
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 3px #32FF92, 0 0 6px #32FF92, 0 0 8px #32FF92;
+    transform: scale(1.05);
+  }
+`;
+
+const LoaderContainer = styled.div<{ fadingout: boolean }>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${variables.dark};
+  z-index: 9999;
+  opacity: 1;
+  animation: ${({ fadingout }) =>
+    fadingout &&
+    css`
+      ${fadeOut} 0.5s forwards;
+    `};
+`;
+
+const GlowingLoader = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 100px;
+  color: #32ff92;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  animation: ${glow} 3s infinite ease-in-out;
+`;
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [isLoading, setIsLoading] = useState(true);
+  const [fadingOut, setIsFadingOut] = useState(false);
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setIsFadingOut(true);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
+    };
+
+    const images = document.querySelectorAll("img");
+    const totalImages = images.length;
+    let loadedImages = 0;
+
+    if (totalImages === 0) {
+      handleLoad();
+    } else {
+      images.forEach((img) => {
+        if (img.complete) {
+          loadedImages += 1;
+          if (loadedImages === totalImages) handleLoad();
+        } else {
+          img.addEventListener("load", () => {
+            loadedImages += 1;
+            if (loadedImages === totalImages) handleLoad();
+          });
+
+          img.addEventListener("error", () => {
+            loadedImages += 1;
+            if (loadedImages === totalImages) handleLoad();
+          });
+        }
+      });
+    }
+  }, []);
+
   return (
     <html lang="en">
-      <head>
-        {/* Global Meta Tags */}
-        <meta
-          name="description"
-          content="Highly Rated Frontend Engineer: Trusted by Clients to Deliver Scalable, Modern,
-and Impactful Web Experiences."
-        />
-        <meta
-          name="keywords"
-          content="Frontend Developer, React Developer, Web Developer, Developer, Designer, Next.js, React, Web Development, JavaScript, Frontend,"
-        />
-        <meta name="author" content="Parsa Morshed" />
-        <meta name="robots" content="index, follow" />
-
-        {/* Open Graph Meta Tags */}
-        <meta
-          property="og:title"
-          content="Parsa Morshed | Frontend Developer"
-        />
-        <meta
-          property="og:description"
-          content="Highly Rated Frontend Engineer: Trusted by Clients to Deliver Scalable, Modern,
-          and Impactful Web Experiences."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="" />
-        <meta property="og:image" content="/preview.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Parsa Morshed" />
-
-        {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@yourtwitterhandle" />
-        <meta
-          name="twitter:title"
-          content="Parsa Morshed | Frontend Developer"
-        />
-        <meta
-          name="twitter:description"
-          content="Highly Rated Frontend Engineer: Trusted by Clients to Deliver Scalable, Modern,
-          and Impactful Web Experiences."
-        />
-        <meta name="twitter:image" content="/preview.jpg" />
-
-        {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
-
-        {/* Viewport Meta Tag */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        {/* Set theme color for Android */}
-        <meta name="theme-color" content="#000000" />
-
-        {/* Set theme color for iOS Safari */}
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta
-          name="apple-mobile-web-app-status-bar-style"
-          content="black-translucent"
-        />
-      </head>
+      <head></head>
       <body className={`${poppins.className}`}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        {isLoading ? (
+          <StyledComponentsRegistry>
+            {/* @ts-expect-error type-error */}
+            <LoaderContainer fadingout={fadingOut ? "true" : "false"}>
+              <GlowingLoader>PM</GlowingLoader>
+            </LoaderContainer>
+          </StyledComponentsRegistry>
+        ) : (
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        )}
       </body>
     </html>
   );

@@ -11,7 +11,7 @@ import {
 } from "@/app/projects";
 export default function PortfolioDesk() {
   return (
-    <PRoot>
+    <PRoot id="projects-section">
       <div className="flex justify-between header w-full items-center mb-10">
         <div>
           <h1 className="text-4xl font-bold text-light">Real-World Impact</h1>

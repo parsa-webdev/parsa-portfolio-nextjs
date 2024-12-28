@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { HMRoot } from "./HM.styled";
-import meMob from "./Images/meMob.jpg";
 import MailIcon from "@/app/icons/MailIcon";
 import LinkedinIcon from "@/app/icons/LinkedinIcon";
 import DocumentIcon from "@/app/icons/DocumentIcon";
@@ -16,9 +15,11 @@ export default function HeroMob() {
     <HMRoot>
       <div className="parsa-mob">
         <Image
-          src={meMob}
+          src="/meMob.jpg"
           alt="Parsa Morshed - Frontend Developer"
           priority={true}
+          width={400}
+          height={0}
         />
         <div className="hero-mob px-5">
           <div className="flex bg-red pt-5 items-center justify-between header mb-5">
@@ -119,13 +120,16 @@ export default function HeroMob() {
             >
               Schedule A Meeting
             </a>
-            <a className="cta text-center text-primary border-2 font-medium border-primary rounded-xl hover:text-secondary hover:border-secondary  ease-in-out duration-300 block mb-4">
+            <a
+              href="#projects-section-mob"
+              className="cta text-center text-primary border-2 font-medium border-primary rounded-xl hover:text-secondary hover:border-secondary  ease-in-out duration-300 block mb-4"
+            >
               Browse Portfolio
             </a>
             <a
               href="https://www.youtube.com/watch?v=mAjJziK9Wxg"
               target="_blank"
-              className="cta cta-tertiary flex items-center gap-2 text-center text-center text-lightGreen3 border-2 border-lightGreen3 rounded-xl hover:text-secondary hover:border-secondary  ease-in-out duration-300 block justify-center mb-20"
+              className="cta cta-tertiary flex items-center gap-2 text-center text-center text-lightGreen3 border-2 border-lightGreen3 rounded-xl hover:text-secondary hover:border-secondary  ease-in-out duration-300 block justify-center mb-0"
             >
               <p>Watch My Video</p> <YouTubeIcon />
             </a>

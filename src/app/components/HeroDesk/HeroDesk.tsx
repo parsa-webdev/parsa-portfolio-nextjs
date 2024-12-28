@@ -108,7 +108,10 @@ export default function HeroDesk() {
           >
             Schedule A Meeting
           </a>
-          <a className="cta text-center text-primary border-2 font-medium border-primary rounded-xl hover:text-secondary hover:border-secondary  ease-in-out duration-300 ">
+          <a
+            className="cta text-center text-primary border-2 font-medium border-primary rounded-xl hover:text-secondary hover:border-secondary  ease-in-out duration-300"
+            href="#projects-section"
+          >
             Browse Portfolio
           </a>
           <a

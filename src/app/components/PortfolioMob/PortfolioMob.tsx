@@ -18,8 +18,8 @@ export default function PortfolioMob() {
     setActiveId(activeId === id ? null : id); // Toggle or collapse
   };
   return (
-    <PMRoot>
-      <div className="flex justify-between header items-center mb-10">
+    <PMRoot id="projects-section-mob">
+      <div className="flex justify-between header items-center mb-10 mt-10">
         <div className="block w-full">
           <h1 className="text-2xl font-bold text-light text-center block">
             Real-World Impact
