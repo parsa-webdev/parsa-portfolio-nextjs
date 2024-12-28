@@ -4,6 +4,7 @@ import MailIcon from "@/app/icons/MailIcon";
 import { HeaderMob } from "./MobileHeader.styled";
 import LinkedinIcon from "@/app/icons/LinkedinIcon";
 import DocumentIcon from "@/app/icons/DocumentIcon";
+import Link from "next/link";
 
 export default function MobileHeader() {
   return (
@@ -12,7 +13,9 @@ export default function MobileHeader() {
         <div className="flex bg-red pt-5 items-center justify-between header mb-5">
           <div className="flex items-center gap-3">
             <div>
-              <h6 className="text-base text-lightGreen">Parsa Morshed</h6>
+              <Link href="/">
+                <h6 className="text-base text-lightGreen">Parsa Morshed</h6>
+              </Link>
             </div>
           </div>
 

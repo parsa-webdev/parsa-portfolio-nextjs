@@ -53,6 +53,15 @@ export default function CodeCaseStudy() {
               modern tools like Next.js, TypeScript, Tailwind CSS and
               Styled-Components.
             </p>
+            <div className="text-center mt-10 mb-20">
+              <a
+                className="p-3 text-center text-primary border-2 font-medium border-primary rounded-xl hover:text-secondary hover:border-secondary  ease-in-out duration-300"
+                href="https://github.com/parsa-webdev/parsa-portfolio-nextjs"
+                target="_blank"
+              >
+                Read the Code
+              </a>
+            </div>
             <section>
               <h2 className="text-2xl font-semibold text-secondary mb-4">
                 Key Features
