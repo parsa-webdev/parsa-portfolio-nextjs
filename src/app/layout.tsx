@@ -63,6 +63,12 @@ const GlowingLoader = styled.div`
   animation: ${glow} 1.5s infinite ease-in-out;
 `;
 
+const PageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -112,7 +118,7 @@ export default function RootLayout({
     // Fallback in case of rapid state changes
     const timer = setTimeout(() => {
       handleLoad(); // Ensure that it doesn't stay stuck in loading state
-    }, 2000); // Time out after 5 seconds if images are not loading
+    }, 2000); // Time out after 2 seconds if images are not loading
 
     return () => clearTimeout(timer); // Cleanup the timer on unmount
   }, []);
@@ -128,15 +134,16 @@ export default function RootLayout({
         <link rel="preload" href="/resourceD.png" as="image" />
       </head>
       <body className={`${poppins.className}`}>
-        {isLoading ? (
-          <StyledComponentsRegistry>
-            <LoaderContainer $fadingout={fadingOut}>
-              <GlowingLoader>PM</GlowingLoader>
-            </LoaderContainer>
-          </StyledComponentsRegistry>
-        ) : (
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-        )}
+        <StyledComponentsRegistry>
+          <PageWrapper>
+            {isLoading && (
+              <LoaderContainer $fadingout={fadingOut}>
+                <GlowingLoader>PM</GlowingLoader>
+              </LoaderContainer>
+            )}
+            {!isLoading && children}
+          </PageWrapper>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
