@@ -126,6 +126,35 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <title>Parsa Morshed | Frontend Developer & UI/UX Specialist</title>
+        <meta
+          name="description"
+          content="Highly Rated Frontend Engineer: Trusted by Clients to Deliver Scalable, Modern, and Impactful Web Experiences."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Parsa Morshed | Frontend Developer & UI/UX Specialist"
+        />
+        <meta
+          property="og:description"
+          content="Highly Rated Frontend Engineer: Trusted by Clients to Deliver Scalable, Modern, and Impactful Web Experiences."
+        />
+        <meta property="og:image" content="/preview.jpg" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:title"
+          content="Parsa Morshed | Frontend Developer & UI/UX Specialist"
+        />
+        <meta
+          property="twitter:description"
+          content="Highly Rated Frontend Engineer: Trusted by Clients to Deliver Scalable, Modern, and Impactful Web Experiences."
+        />
+        <meta property="twitter:image" content="/preview.jpg" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="canonical" href="https://devparsa.com" />
+
         <link rel="preload" href="/brian.png" as="image" />
         <link rel="preload" href="/meDesk.jpg" as="image" />
         <link rel="preload" href="/meDesk.jpg" as="image" />
