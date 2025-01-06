@@ -24,11 +24,19 @@ export default function SmartListPage() {
   const fetchData = async (offset = 0) => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/data?query=${query}&offset=${offset}`);
+      const res = await fetch(
+        `/api/data?query=${encodeURIComponent(query)}&offset=${offset}`
+      );
+      if (!res.ok) {
+        console.error("Error fetching data:", res.statusText);
+        return;
+      }
       const newData = await res.json();
-      setData((prevData) => [...prevData, ...newData]);
+      setData((prevData) =>
+        offset === 0 ? newData : [...prevData, ...newData]
+      );
     } catch (err) {
-      console.log("Error fetching data", err);
+      console.error("Error fetching data:", err);
     } finally {
       setLoading(false);
     }

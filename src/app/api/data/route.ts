@@ -50,8 +50,7 @@ async function ensureCachedData(): Promise<DataRow[]> {
     } else {
       isLoading = true;
       try {
-        const data = await loadCSVData();
-        cachedData = data;
+        cachedData = await loadCSVData();
       } catch (err) {
         console.error("Error loading CSV data:", err);
         throw new Error("Failed to load CSV data");
@@ -70,12 +69,18 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
 
     const query =
       request.nextUrl.searchParams.get("query")?.toLowerCase() || "";
-    const offset = parseInt(request.nextUrl.searchParams.get("offset") || "0");
+    const offset = parseInt(
+      request.nextUrl.searchParams.get("offset") || "0",
+      10
+    );
     const limit = 100;
 
+    console.log("Received query:", query);
     const filtered = data.filter((row) =>
       row.Organization.toLowerCase().includes(query)
     );
+    console.log("Filtered results:", filtered.length);
+
     const paginated = filtered.slice(offset, offset + limit);
 
     return NextResponse.json(paginated);
