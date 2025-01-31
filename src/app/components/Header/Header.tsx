@@ -29,7 +29,7 @@ export default function Header() {
             </a>
 
             <a
-              href="https://drive.google.com/file/d/166bv5gz_osvHkmq85eblOPQXc-cZkqdA/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1Y7SpQWNT2xQ9v6QapKXPoB68GLBi9C6O/view?usp=sharing"
               target="_blank"
             >
               <DocumentIcon />
